@@ -3,6 +3,7 @@ package com.nikolai.instagramhelper
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -24,16 +25,17 @@ fun OnBoardingScreenView() {
             .padding(horizontal = 38.dp)
             .fillMaxSize()
             .background(whiteColor),
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text("Instagram helper",)
-        Text("Desc")
-        MainAppButton(
-            modifier = Modifier.fillMaxWidth(),
-            onClick =  { },
-            text = "Close"
-        )
-    }
+        verticalArrangement = Arrangement.Center,
+        content = {
+            Text("Instagram helper",)
+            Text("Desc")
+            MainAppButton(
+                modifier = Modifier.fillMaxWidth(),
+                onClick =  { },
+                text = "Close"
+            )
+        }
+    )
 }
 
 // Конфигурации сборки настроить для Intellij
