@@ -1,4 +1,4 @@
-package com.nikolai.instagramhelper.model.commonViews
+package com.nikolai.instagramhelper.commonViews
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
@@ -40,10 +40,10 @@ fun MainAppButton(
             Text(
                 text,
                 fontSize = 20.sp,
-                modifier = Modifier.padding(vertical = 14.dp),
                 fontFamily = FontFamily(Font(Res.font.Poppins_Bold)),
                 fontWeight = FontWeight.Bold
             )
         }
     )
 }
+
