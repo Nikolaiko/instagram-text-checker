@@ -1,4 +1,4 @@
-package com.nikolai.instagramhelper.onBoardingView
+package com.nikolai.instagramhelper.onBoardingFeature.views
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface

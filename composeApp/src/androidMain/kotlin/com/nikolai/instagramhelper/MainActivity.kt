@@ -3,7 +3,6 @@ package com.nikolai.instagramhelper
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.nikolai.instagramhelper.onBoardingView.OnBoardingScreenView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

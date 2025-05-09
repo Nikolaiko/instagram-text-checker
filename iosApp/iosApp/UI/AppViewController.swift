@@ -1,9 +1,9 @@
 import SwiftUI
 import ComposeApp
 
-struct OnBoardingView: UIViewControllerRepresentable {
+struct AppViewController: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController {
-        OnBoardingViewControllerKt.OnBoardingViewController()
+        AppViewControllerKt.AppViewController()
     }
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}

@@ -34,6 +34,7 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
         }
+
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -41,8 +42,22 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+
+            //ViewModel
             implementation(libs.androidx.lifecycle.viewmodel)
+
+            //Compose
             implementation(libs.androidx.lifecycle.runtime.compose)
+            implementation(libs.androidx.navigation.compose)
+
+            //Coroutines
+            implementation(libs.kotlinx.coroutines.multiplatform)
+
+            //Koin
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
         }
     }
 }
@@ -75,6 +90,10 @@ android {
 }
 
 dependencies {
+    //Koin
+    implementation(libs.koin.android)
+    implementation(libs.koin.android.compose)
+
     debugImplementation(compose.uiTooling)
 }
 
