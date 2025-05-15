@@ -53,6 +53,9 @@ kotlin {
             //Coroutines
             implementation(libs.kotlinx.coroutines.multiplatform)
 
+            //Datetime
+            implementation(libs.kotlinx.datetime)
+
             //Koin
             implementation(project.dependencies.platform(libs.koin.bom))
             implementation(libs.koin.core)

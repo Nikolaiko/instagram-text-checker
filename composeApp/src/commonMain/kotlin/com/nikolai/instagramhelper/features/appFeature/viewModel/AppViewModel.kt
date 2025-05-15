@@ -1,15 +1,11 @@
-package com.nikolai.instagramhelper.appFeature.viewModel
+package com.nikolai.instagramhelper.features.appFeature.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.nikolai.instagramhelper.appFeature.state.AppFeatureState
+import com.nikolai.instagramhelper.features.appFeature.state.AppFeatureState
 import com.nikolai.instagramhelper.model.navigation.AppDestination
 import com.nikolai.instagramhelper.services.settingsService.SettingsService
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
 class AppViewModel(
@@ -32,7 +28,6 @@ class AppViewModel(
         }
 
         viewModelScope.launch {
-            println(stateFlow.value.copy(initialScreen = currentDestination))
             _stateFlow.emit(stateFlow.value.copy(initialScreen = currentDestination))
         }
     }

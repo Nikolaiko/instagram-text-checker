@@ -1,4 +1,4 @@
-package com.nikolai.instagramhelper.onBoardingFeature.state
+package com.nikolai.instagramhelper.features.onBoardingFeature.state
 
 data class OnBoardingScreenState(
     val pageNumber: Int = 0

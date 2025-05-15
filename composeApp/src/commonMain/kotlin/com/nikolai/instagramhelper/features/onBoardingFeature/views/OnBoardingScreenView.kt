@@ -1,13 +1,7 @@
-package com.nikolai.instagramhelper.onBoardingFeature.views
+package com.nikolai.instagramhelper.features.onBoardingFeature.views
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -17,17 +11,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.nikolai.instagramhelper.appFeature.state.AppFeatureState
 import com.nikolai.instagramhelper.commonViews.MainAppButton
+import com.nikolai.instagramhelper.features.onBoardingFeature.state.OnBoardingScreenState
+import com.nikolai.instagramhelper.features.onBoardingFeature.viewModel.OnBoardingViewModel
 import com.nikolai.instagramhelper.model.uiScheme.blackColor
 import com.nikolai.instagramhelper.model.uiScheme.whiteColor
-import com.nikolai.instagramhelper.onBoardingFeature.state.OnBoardingScreenState
-import com.nikolai.instagramhelper.onBoardingFeature.viewModel.OnBoardingViewModel
-import instagramhelper.composeapp.generated.resources.Poppins_Bold
-import instagramhelper.composeapp.generated.resources.Poppins_Regular
-import instagramhelper.composeapp.generated.resources.Res
-import instagramhelper.composeapp.generated.resources.on_boarding_subtitle
-import instagramhelper.composeapp.generated.resources.on_boarding_title
+import instagramhelper.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.Font
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel

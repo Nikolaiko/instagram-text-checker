@@ -1,0 +1,5 @@
+<resources>
+  <string name="notes_list_title">Список заметок</string>
+
+  <string name="new_note_button_description">Создать новую запись</string>
+</resources>

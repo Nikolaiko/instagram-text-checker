@@ -1,4 +1,4 @@
-package com.nikolai.instagramhelper.appFeature.state
+package com.nikolai.instagramhelper.features.appFeature.state
 
 import com.nikolai.instagramhelper.model.navigation.AppDestination
 

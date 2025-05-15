@@ -9,4 +9,7 @@ enum class AppDestination(
     NotesListScreen(
         route = "notesList"
     ),
+    WorkWithNoteScreen(
+        route = "workWithNote"
+    ),
 }
