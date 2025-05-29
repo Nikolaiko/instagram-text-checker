@@ -1,15 +1,16 @@
 package com.nikolai.instagramhelper.model.navigation
 
-enum class AppDestination(
+import com.nikolai.instagramhelper.model.consts.AppRoutesStrings
+
+sealed class AppDestination(
     val route: String,
 ) {
-    OnBoardingScreen(
-        route = "onBoarding"
-    ),
-    NotesListScreen(
-        route = "notesList"
-    ),
-    WorkWithNoteScreen(
-        route = "workWithNote"
-    ),
+    data object OnBoardingScreen: AppDestination(route = AppRoutesStrings.onBoarding)
+    data object NotesListScreen: AppDestination(route = AppRoutesStrings.notesList)
+    data class WorkWithNoteScreen(val noteId: String?): AppDestination(
+        route = when(noteId == null) {
+            true -> AppRoutesStrings.currentNote
+            false -> "${AppRoutesStrings.currentNote}/$noteId"
+        }
+    )
 }

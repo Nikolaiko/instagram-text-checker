@@ -16,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.nikolai.instagramhelper.features.notesListFeature.state.NotesListViewState
 import com.nikolai.instagramhelper.features.notesListFeature.view.subviews.SingleNoteItemView
 import com.nikolai.instagramhelper.features.notesListFeature.viewModel.NotesListViewModel
@@ -66,7 +67,9 @@ fun NotesListView(viewModel: NotesListViewModel = koinViewModel()) {
                 .fillMaxSize()
         ) {
             items(uiState.value.notesList) {
-                SingleNoteItemView(it)
+                SingleNoteItemView(it, onClick = { selectedId ->
+                    viewModel.editNote(selectedId)
+                })
             }
         }
     }

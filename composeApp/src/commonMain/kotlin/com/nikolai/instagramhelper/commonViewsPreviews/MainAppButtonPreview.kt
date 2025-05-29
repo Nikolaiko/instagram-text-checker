@@ -12,3 +12,13 @@ fun MainAppButtonPreview() {
         text = "Example text"
     )
 }
+
+@Preview
+@Composable
+fun MainAppButtonDisabledPreview() {
+    MainAppButton(
+        onClick = { },
+        text = "Example text",
+        enabled = false
+    )
+}

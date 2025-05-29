@@ -14,6 +14,7 @@ import com.nikolai.instagramhelper.commonViews.InputTextField
 import com.nikolai.instagramhelper.commonViews.MainAppButton
 import com.nikolai.instagramhelper.features.workWithNoteFeature.state.WorkWithNoteViewState
 import com.nikolai.instagramhelper.features.workWithNoteFeature.viewModel.WorkWithFeatureViewModel
+import com.nikolai.instagramhelper.model.consts.TextFormatConstants
 import com.nikolai.instagramhelper.model.uiScheme.blackColor
 import instagramhelper.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.Font
@@ -42,17 +43,25 @@ fun WorkWithNoteView(viewModel: WorkWithFeatureViewModel = koinViewModel()) {
             modifier = Modifier
                 .fillMaxWidth(),
             value = uiState.value.currentNoteTitle,
-            onValueChange = { },
-            placeholder = { Text("Заголовок статьи") }
+            singleLine = true,
+            onValueChange = viewModel::onTitleTextChange,
+            placeholder = { Text(
+                stringResource(Res.string.note_title_placeholder)
+            ) },
+            maxChar = TextFormatConstants.maxCharsInNoteTitle
         )
 
         InputTextField(
             modifier = Modifier
                 .fillMaxWidth()
                 .fillMaxHeight(fraction = 0.7f),
-            value = uiState.value.currentNoteTitle,
-            onValueChange = { },
-            placeholder = { Text("Текст статьи") }
+            value = uiState.value.currentNoteText,
+            onValueChange = viewModel::onMainTextChange,
+            placeholder = { Text(
+                stringResource(Res.string.note_text_placeholder)
+            ) },
+            maxChar = TextFormatConstants.maxCharsInNoteText,
+            isError = !uiState.value.noteValid
         )
 
         Row(
@@ -65,7 +74,8 @@ fun WorkWithNoteView(viewModel: WorkWithFeatureViewModel = koinViewModel()) {
             )
 
             MainAppButton(
-                onClick =  {  },
+                onClick =  { viewModel.applyChanges() },
+                enabled = uiState.value.noteValid,
                 text = stringResource(Res.string.apply_button_title)
             )
         }

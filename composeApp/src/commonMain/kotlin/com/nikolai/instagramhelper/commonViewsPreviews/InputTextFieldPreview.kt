@@ -10,7 +10,8 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun InputTextFieldPreview() {
     InputTextField(
         value = "Some text",
-        onValueChange = { }
+        onValueChange = { },
+        maxChar = 4
     )
 }
 
@@ -20,6 +21,19 @@ fun EmptyInputTextFieldPreview() {
     InputTextField(
         value = "",
         onValueChange = { },
-        placeholder = { Text("Placeholder") }
+        placeholder = { Text("Placeholder") },
+        maxChar = 4
+    )
+}
+
+@Preview
+@Composable
+fun ErrorInputTextFieldPreview() {
+    InputTextField(
+        value = "",
+        onValueChange = { },
+        placeholder = { Text("Placeholder") },
+        maxChar = 4,
+        isError = true
     )
 }

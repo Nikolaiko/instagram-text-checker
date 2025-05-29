@@ -20,17 +20,18 @@ import com.nikolai.instagramhelper.model.uiScheme.whiteColor
 import instagramhelper.composeapp.generated.resources.Poppins_Bold
 import instagramhelper.composeapp.generated.resources.Res
 import org.jetbrains.compose.resources.Font
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun MainAppButton(
     modifier: Modifier = Modifier,
     onClick: () -> Unit,
-    text: String = ""
+    text: String = "",
+    enabled: Boolean = true
 ) {
     Button(
         modifier = modifier,
         onClick = onClick,
+        enabled = enabled,
         shape = RoundedCornerShape(12.dp),
         colors = ButtonDefaults.buttonColors(
             contentColor = whiteColor,

@@ -1,6 +1,7 @@
 package com.nikolai.instagramhelper.di
 
 import com.nikolai.instagramhelper.di.modules.platformModule
+import com.nikolai.instagramhelper.di.modules.provideRoomDatabaseModule
 import com.nikolai.instagramhelper.di.modules.provideServicesModule
 import com.nikolai.instagramhelper.di.modules.provideTestModule
 import com.nikolai.instagramhelper.di.modules.provideViewModelModule
@@ -13,9 +14,14 @@ fun initKoin(config: KoinAppDeclaration? = null) {
 
         modules(
             platformModule(),
-            provideViewModelModule,
-            provideServicesModule
+            //Room local service implementation
+            provideRoomDatabaseModule,
+
+            provideServicesModule,
             //provideTestModule
+
+
+            provideViewModelModule
         )
     }
 }

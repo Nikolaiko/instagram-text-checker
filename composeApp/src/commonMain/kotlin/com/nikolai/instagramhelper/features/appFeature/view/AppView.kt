@@ -12,6 +12,8 @@ import com.nikolai.instagramhelper.features.appFeature.viewModel.AppViewModel
 import com.nikolai.instagramhelper.features.notesListFeature.view.NotesListView
 import com.nikolai.instagramhelper.features.onBoardingFeature.views.OnBoardingScreenView
 import com.nikolai.instagramhelper.features.workWithNoteFeature.view.WorkWithNoteView
+import com.nikolai.instagramhelper.features.workWithNoteFeature.viewModel.WorkWithFeatureViewModel
+import com.nikolai.instagramhelper.model.consts.AppRoutesStrings
 import com.nikolai.instagramhelper.model.navigation.AppDestination
 import com.nikolai.instagramhelper.services.navigationService.AppNavigationService
 import org.koin.compose.koinInject
@@ -32,14 +34,19 @@ fun AppView(
             navController = navController,
             startDestination = viewModel.getInitialScreen().route
         ) {
-            composable(route = AppDestination.OnBoardingScreen.route) {
+            composable(route = AppRoutesStrings.onBoarding) {
                 OnBoardingScreenView()
             }
-            composable(route = AppDestination.NotesListScreen.route) {
+            composable(route = AppRoutesStrings.notesList) {
                 NotesListView()
             }
-            composable(route = AppDestination.WorkWithNoteScreen.route) {
-                WorkWithNoteView()
+            composable(route = "${AppRoutesStrings.currentNote}/{noteId}") {
+                val noteId = it.arguments?.getString("noteId")
+                val viewModel: WorkWithFeatureViewModel = koinViewModel()
+                if (noteId != null) {
+                    viewModel.initWithNoteId(noteId)
+                }
+                WorkWithNoteView(viewModel)
             }
         }
     }

@@ -11,5 +11,5 @@ val provideViewModelModule = module {
     viewModel { AppViewModel(get()) }
     viewModel { OnBoardingViewModel(get(), get()) }
     viewModel { NotesListViewModel(get(), get()) }
-    viewModel { WorkWithFeatureViewModel(get()) }
+    viewModel { WorkWithFeatureViewModel(get(), get()) }
 }
