@@ -40,7 +40,7 @@ fun AppView(
             composable(route = AppRoutesStrings.notesList) {
                 NotesListView()
             }
-            composable(route = "${AppRoutesStrings.currentNote}/{noteId}") {
+            composable(route = "${AppRoutesStrings.currentNote}?noteId={noteId}") {
                 val noteId = it.arguments?.getString("noteId")
                 val viewModel: WorkWithFeatureViewModel = koinViewModel()
                 if (noteId != null) {

@@ -10,7 +10,7 @@ sealed class AppDestination(
     data class WorkWithNoteScreen(val noteId: String?): AppDestination(
         route = when(noteId == null) {
             true -> AppRoutesStrings.currentNote
-            false -> "${AppRoutesStrings.currentNote}/$noteId"
+            false -> "${AppRoutesStrings.currentNote}?noteId=$noteId"
         }
     )
 }
